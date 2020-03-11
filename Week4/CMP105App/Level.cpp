@@ -5,6 +5,8 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	window = hwnd;
 	input = in;
 
+	new Player(player);
+	player.setInput(input);
 	// initialise game objects
 	texture.loadFromFile("gfx/Mushroom.png");
 
@@ -25,24 +27,24 @@ void Level::handleInput(float dt)
 	// Close window on Escape pressed.
 	if (input->isKeyDown(sf::Keyboard::Escape))
 	{
+		delete &player;
 		window->close();
 	}
-
+	player.handleInput(dt);
 }
 
 // Update game objects
 void Level::update(float dt)
 {
-	
+	player.update(dt);
 }
 
 // Render level
 void Level::render()
 {
 	beginDraw();
-
 	window->draw(testSprite);
-
+	window->draw(player);
 	endDraw();
 }
 
