@@ -6,6 +6,7 @@
 #include <string.h>
 #include <iostream>
 #include "Player.h"
+#include "Goomba.h"
 
 class Level{
 public:
@@ -29,5 +30,6 @@ private:
 	GameObject testSprite;
 	sf::Texture texture;
 	Player player;
+	Goomba goomba;
 
 };

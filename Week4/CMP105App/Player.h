@@ -11,7 +11,6 @@ public:
 
 private:
 
-	GameObject player;
 	sf::Texture playerTexture;
 };
 

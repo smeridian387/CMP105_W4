@@ -159,6 +159,7 @@
   <ItemGroup>
     <ClCompile Include="Framework\Input.cpp" />
     <ClCompile Include="Framework\GameObject.cpp" />
+    <ClCompile Include="Goomba.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -170,6 +171,7 @@
   <ItemGroup>
     <ClInclude Include="Framework\Input.h" />
     <ClInclude Include="Framework\GameObject.h" />
+    <ClInclude Include="Goomba.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="Player.h" />
   </ItemGroup>

@@ -5,9 +5,10 @@ Player::Player()
 	// initialise game objects
 	playerTexture.loadFromFile("gfx/Mushroom.png");
 
-	player.setTexture(&playerTexture);
-	player.setSize(sf::Vector2f(100, 100));
-	player.setPosition(300, 300);
+	setTexture(&playerTexture);
+	setSize(sf::Vector2f(100, 100));
+	setPosition(300, 300);
+	setVelocity(100.0f, 100.0f);
 }
 
 Player::~Player()
@@ -17,13 +18,13 @@ Player::~Player()
 
 void Player::handleInput(float dt)
 {
-	if (input->isKeyDown(sf::Keyboard::Right))
+	if (input->isKeyDown(sf::Keyboard::D))
 	{
-		move(velocity * dt);
+		move(velocity.x * dt,0);
 	}
-	if (input->isKeyDown(sf::Keyboard::Left))
+	if (input->isKeyDown(sf::Keyboard::A))
 	{
-		move(-velocity * dt);
+		move(-velocity.x * dt,0);
 	}
 }
 

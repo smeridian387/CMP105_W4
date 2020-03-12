@@ -5,8 +5,8 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	window = hwnd;
 	input = in;
 
-	new Player(player);
 	player.setInput(input);
+	goomba.setInput(input);
 	// initialise game objects
 	texture.loadFromFile("gfx/Mushroom.png");
 
@@ -27,7 +27,6 @@ void Level::handleInput(float dt)
 	// Close window on Escape pressed.
 	if (input->isKeyDown(sf::Keyboard::Escape))
 	{
-		delete &player;
 		window->close();
 	}
 	player.handleInput(dt);
@@ -37,6 +36,7 @@ void Level::handleInput(float dt)
 void Level::update(float dt)
 {
 	player.update(dt);
+	goomba.update(dt,window);
 }
 
 // Render level
@@ -45,6 +45,7 @@ void Level::render()
 	beginDraw();
 	window->draw(testSprite);
 	window->draw(player);
+	window->draw(goomba);
 	endDraw();
 }
 
